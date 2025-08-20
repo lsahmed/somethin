@@ -28,9 +28,11 @@ function Navbar() {
     <nav className="w-full bg-[#f5f6fa] border-b border-gray-200">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-4">
         {/* Brand on the left */}
+        <Link href="/">
         <span className="text-2xl font-bold text-gray-800 tracking-wide">
           RoboBharat
         </span>
+        </Link>
         {/* Desktop navigation */}
         <div className="hidden md:flex gap-4">
             {navItems.map((item, idx) => {

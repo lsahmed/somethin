@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Navbar from "../components/subComponents/Navbar"
 
 export default function OurTeam() {
   const members = [{
@@ -9,12 +10,14 @@ export default function OurTeam() {
   {
     name: "Ahmed",
     role: "Web Developer, CTO",
-    image: "",
+    image: "https://dummyimage.com/80x80",
   },
   ]
 
 
-  return <section className="text-gray-700 body-font bg-white min-h-screen">
+  return <>
+  <Navbar />
+  <section className="text-gray-700 body-font bg-white min-h-screen">
     <div className="container px-5 py-24 mx-auto max-w-7xl">
       {/* Header */}
       <div className="flex flex-col text-center w-full mb-20">
@@ -33,7 +36,7 @@ export default function OurTeam() {
                 alt="team member"
                 className="w-20 h-20 bg-gray-100 object-cover object-center rounded-full mr-6 flex-shrink-0"
                 src={item.image}
-              />
+                />
               <div className="flex-grow">
                 <h2 className="text-gray-900 font-semibold text-xl">{item.name}</h2>
                 <p className="text-gray-500 text-base mt-1">{item.role}</p>
@@ -44,7 +47,7 @@ export default function OurTeam() {
       </div>
     </div>
   </section>
-
+</>
 
 
 }
