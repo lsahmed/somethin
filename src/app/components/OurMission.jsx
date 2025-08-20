@@ -20,6 +20,7 @@ function OurMission() {
                 src="https://i.ibb.co/0R5KWv8V/Screenshot-2025-08-19-at-9-55-48-PM.png"
                 width="3000"
                 height="3000"
+                alt="l"
             />
         </div>
 

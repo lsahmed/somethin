@@ -1,7 +1,10 @@
 import Image from "next/image";
+import Navbar from "./subComponents/Navbar";
 
 export default function Hero() {
   return (
+  <>
+    <Navbar />
     <div className="bg-white">
       <div className="flex flex-col lg:flex-row min-h-screen">
 
@@ -39,5 +42,6 @@ export default function Hero() {
         </div>
       </div>
     </div>
+  </>
   );
 }
