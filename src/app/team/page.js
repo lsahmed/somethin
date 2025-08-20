@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Navbar from "../components/subComponents/Navbar"
 
 export default function OurTeam() {
@@ -23,7 +22,7 @@ export default function OurTeam() {
       <div className="flex flex-col text-center w-full mb-20">
         <h1 className="sm:text-4xl text-3xl font-bold mb-4 text-gray-800">Our Team</h1>
         <p className="lg:w-2/3 mx-auto leading-relaxed text-lg text-gray-600">
-          Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.
+          Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably have not heard of them.
         </p>
       </div>
       {/* Team Members */}
