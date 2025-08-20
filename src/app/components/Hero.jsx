@@ -37,7 +37,6 @@ export default function Hero() {
                   alt='Image'
                 />
             </div>
-
           </div>
         </div>
       </div>

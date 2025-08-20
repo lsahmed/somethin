@@ -16,7 +16,7 @@ function RealWorldImpact() {
         {/* Project imgs grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
           <img
-            src="https://i.ibb.co/BVdXPDhr/Screenshot-2025-08-19-at-10-01-41-PM.png"
+            src="https://i.ibb.co/TMgrf93y/Screenshot-2025-08-20-at-10-05-32-PM.png"
             alt="Student with robot and laptop"
             className="rounded-lg w-full object-cover aspect-[4/3]"
           />
