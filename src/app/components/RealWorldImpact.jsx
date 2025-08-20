@@ -26,14 +26,14 @@ function RealWorldImpact() {
             className="rounded-lg w-full object-cover aspect-[4/3]"
           />
           <img
-            src="https://i.ibb.co/0RmSzwht/Screenshot-2025-08-19-at-10-04-17-PM.png"
+            src="https://i.ibb.co/rXZPLDT/Screenshot-2025-08-20-at-10-25-53-PM.png"
             alt="Smart agriculture field"
             className="rounded-lg w-full object-cover aspect-[4/3]"
           />
         </div>
         <div className="w-full mb-10">
           <img
-            src="https://i.ibb.co/6R5dtf7f/joj.png"
+            src="https://i.ibb.co/gFvyNQcG/Screenshot-2025-08-20-at-10-23-47-PM.png"
             alt="Students working on city-scale model"
             className="rounded-lg w-full object-cover aspect-[5/2]"
           />
