@@ -33,8 +33,8 @@ function Navbar() {
         </span>
         {/* Desktop navigation */}
         <div className="hidden md:flex gap-4">
-            {navItems.map((item) => {
-            return <button className="w-full px-6 py-0.5 rounded-lg border-2 border-gray-800 text-gray-800 font-semibold bg-transparent hover:bg-gray-800 hover:text-white transition text-left">
+            {navItems.map((item, idx) => {
+            return <button key={idx} className="w-full px-6 py-0.5 rounded-lg border-2 border-gray-800 text-gray-800 font-semibold bg-transparent hover:bg-gray-800 hover:text-white transition text-left">
                     <Link href={item.href}>
                         {item.name}
                     </Link>
@@ -66,8 +66,8 @@ function Navbar() {
       {/* Mobile menu */}
       {open && (
         <div className="md:hidden bg-[#f5f6fa] border-t border-gray-200 px-6 py-4 flex flex-col gap-3">
-            {navItems.map((item) => {
-            return <button className="w-full px-6 py-0.5 rounded-lg border-2 border-gray-800 text-gray-800 font-semibold bg-transparent hover:bg-gray-800 hover:text-white transition text-left">
+            {navItems.map((item, idx) => {
+            return <button key={idx} className="w-full px-6 py-1 rounded-lg border-2 border-gray-800 text-gray-800 font-semibold bg-transparent hover:bg-gray-800 hover:text-white transition text-left">
                     <Link href={item.href}>
                         {item.name}
                     </Link>
