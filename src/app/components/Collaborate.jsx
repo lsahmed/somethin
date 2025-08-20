@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 function CollaborateWithUs() {
   return (
@@ -16,10 +17,13 @@ function CollaborateWithUs() {
         <div className="grid md:grid-cols-2 gap-8">
           {/* Image */}
           <div>
-            <img
+            <Image
               src="https://i.ibb.co/m5bNkdjc/Screenshot-2025-08-20-at-10-11-23-PM.png"
               alt="Students working on robotics at a table"
+              width={1000}
+              height={600}
               className="rounded-lg w-full object-cover md:h-full aspect-[5/3]"
+              priority
             />
           </div>
           {/* Collaboration Cards */}

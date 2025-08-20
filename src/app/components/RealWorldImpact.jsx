@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 function RealWorldImpact() {
   return (
@@ -15,26 +16,35 @@ function RealWorldImpact() {
 
         {/* Project imgs grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-          <img
+          <Image
             src="https://i.ibb.co/TMgrf93y/Screenshot-2025-08-20-at-10-05-32-PM.png"
             alt="Student with robot and laptop"
+            width={800}
+            height={600}
             className="rounded-lg w-full object-cover aspect-[4/3]"
+            priority
           />
-          <img
+          <Image
             src="https://i.ibb.co/Xkvgrnfd/Screenshot-2025-08-20-at-10-16-54-PM.png"
             alt="Robotic arm working on electronics"
+            width={800}
+            height={600}
             className="rounded-lg w-full object-cover aspect-[4/3]"
           />
-          <img
+          <Image
             src="https://i.ibb.co/rXZPLDT/Screenshot-2025-08-20-at-10-25-53-PM.png"
             alt="Smart agriculture field"
+            width={800}
+            height={600}
             className="rounded-lg w-full object-cover aspect-[4/3]"
           />
         </div>
         <div className="w-full mb-10">
-          <img
+          <Image
             src="https://i.ibb.co/gFvyNQcG/Screenshot-2025-08-20-at-10-23-47-PM.png"
             alt="Students working on city-scale model"
+            width={1000}
+            height={400}
             className="rounded-lg w-full object-cover aspect-[5/2]"
           />
         </div>
