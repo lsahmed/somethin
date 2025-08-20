@@ -21,7 +21,7 @@ function RealWorldImpact() {
             className="rounded-lg w-full object-cover aspect-[4/3]"
           />
           <img
-            src="https://i.ibb.co/0RNtBzpb/Screenshot-2025-08-19-at-10-03-34-PM.png"
+            src="https://i.ibb.co/Xkvgrnfd/Screenshot-2025-08-20-at-10-16-54-PM.png"
             alt="Robotic arm working on electronics"
             className="rounded-lg w-full object-cover aspect-[4/3]"
           />

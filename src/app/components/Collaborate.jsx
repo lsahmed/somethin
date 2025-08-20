@@ -17,7 +17,7 @@ function CollaborateWithUs() {
           {/* Image */}
           <div>
             <img
-              src="https://i.ibb.co/ksDKt7gT/joj.jpg"
+              src="https://i.ibb.co/m5bNkdjc/Screenshot-2025-08-20-at-10-11-23-PM.png"
               alt="Students working on robotics at a table"
               className="rounded-lg w-full object-cover md:h-full aspect-[5/3]"
             />
