@@ -2,7 +2,7 @@ import React from "react";
 
 function WhatWeDo() {
   return (
-    <div className="min-h-screen bg-[#6C6E7B] flex flex-col justify-center">
+    <section className="min-h-screen bg-[#6C6E7B] flex flex-col justify-center" id="whatwedo">
       <div className="max-w-7xl mx-auto px-6 py-20">
         {/* Heading */}
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -44,7 +44,7 @@ function WhatWeDo() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

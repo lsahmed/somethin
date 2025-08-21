@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
     <Hero />
-    <About />
+    <About id="About"/>
     <WhatWeDo />
     <WhyChooseWe />
     <OurMission />

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function OurMission() {
   return (
-    <div className="bg-white py-16 min-h-screen flex flex-col justify-between">
+    <section className="bg-white py-16 min-h-screen flex flex-col justify-between" id="ourmission">
       <div className="max-w-5xl mx-auto px-6">
         {/* Heading */}
         <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
@@ -29,7 +29,7 @@ function OurMission() {
           This accessibility is key to realizing our dream: a future where Bharat leads the world in innovation, driven by its empowered youth.
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

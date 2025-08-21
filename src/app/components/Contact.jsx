@@ -3,7 +3,7 @@ import React from "react";
 
 function Contact() {
   return (
-    <div className="bg-[#464852] min-h-screen py-20 flex flex-col justify-center">
+    <section className="bg-[#464852] min-h-screen py-20 flex flex-col justify-center" id="contact">
       <div className="max-w-5xl mx-auto px-6">
         {/* Heading */}
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-center">
@@ -68,7 +68,10 @@ function Contact() {
           </div>
         </div>
       </div>
-    </div>
+      <p className="text-lg text-gray-200 mb-14 max-w-3xl mx-auto text-center">
+         © All rights reserved by Robo Bharat Technologies.
+        </p>
+    </section>
   );
 }
 

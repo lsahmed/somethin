@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function RealWorldImpact() {
   return (
-    <div className="bg-[#555963] min-h-screen py-16">
+    <section className="bg-[#555963] min-h-screen py-16" id="realworldimpact">
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -54,7 +54,7 @@ function RealWorldImpact() {
           Each project is a testament to our commitment to "Learning by Doing" and "Innovation First," directly contributing to a smarter Bharat.
         </p>
       </div>
-    </div>
+    </section>
   );
 }
 

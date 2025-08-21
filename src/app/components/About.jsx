@@ -1,8 +1,8 @@
 import React from "react";
 
-function About() {
+function About({ id }) {
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col justify-center">
+    <section className="min-h-screen bg-gray-100 flex flex-col justify-center" id={id}>
       <div className="max-w-5xl mx-auto px-6 py-20">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-700 mb-6">
           About Robo Bharat Technologies
@@ -67,7 +67,7 @@ function About() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

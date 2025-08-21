@@ -2,7 +2,7 @@ import React from "react";
 
 function WhyChooseWe() {
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col justify-center">
+    <section className="min-h-screen bg-gray-100 flex flex-col justify-center" id="whywe">
       <div className="max-w-6xl mx-auto px-6 py-20">
         {/* Heading */}
         <h2 className="text-4xl md:text-5xl font-bold text-gray-700 mb-6">
@@ -74,7 +74,7 @@ function WhyChooseWe() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
