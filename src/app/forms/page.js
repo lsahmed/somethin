@@ -1,15 +1,15 @@
 "use client"
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import React from "react";
-import { useForm, ValidationError } from "@formspree/react"
+// import { useForm, ValidationError } from "@formspree/react"
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 
 function ContactForm() {
   const router = useRouter()
-  const [state, handleSubmit] = useForm("xzzvljqn");
+  // const [state, handleSubmit] = useForm("xzzvljqn");
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -20,10 +20,8 @@ function ContactForm() {
     alert("Form Submitted!");
     router.push('/');
   }
-  if (state.succeeded) {
-    return afterSubmit()
-  }
-
+  
+  
   const twoWayBinding = (e, n) => {
     if(n == "name"){
       setName(e);
@@ -38,6 +36,34 @@ function ContactForm() {
       setDesignation(e);
     }
   }
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if(designation !== ""){
+      try{
+        const data = {name, email, phone, designation};
+        fetch("/api", {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        }).then(response => {
+          if(!response.ok){
+            throw new Error(`HTTP error! status ${response.status}`);
+          }
+        })
+      }
+      catch(error){
+        console.log(error);
+      }
+      finally{
+        setName(""), setEmail(""), setPhone(""), setDesignation("")
+        afterSubmit();
+      }
+    }
+  }
+
 
   return (
     <div className="bg-[#f5f6fa] min-h-screen flex flex-col justify-center py-12">
@@ -59,11 +85,11 @@ function ContactForm() {
             placeholder="Your Name"
             required
           />
-          <ValidationError
+          {/* <ValidationError
             prefix="name"
             field="name"
             errors={state.errors}
-          />
+          /> */}
         </div>
 
         {/* Email */}
@@ -81,11 +107,11 @@ function ContactForm() {
             placeholder="you@email.com"
             required
           />
-          <ValidationError
+          {/* <ValidationError
             prefix="email"
             field="email"
             errors={state.errors}
-          />
+          /> */}
         </div>
 
         {/* Phone */}
@@ -102,11 +128,11 @@ function ContactForm() {
             onChange={(e) => (twoWayBinding(e.target.value, e.target.name))}
             placeholder="Your Phone Number"
           />
-          <ValidationError
+          {/* <ValidationError
             prefix="phone"
             field="phone"
             errors={state.errors}
-          />
+          /> */}
         </div>
 
         {/* Designation */}
@@ -123,11 +149,11 @@ function ContactForm() {
             onChange={(e) => (twoWayBinding(e.target.value, e.target.name))}
             placeholder="Your Designation"
           />
-          <ValidationError
+          {/* <ValidationError
             prefix="designation"
             field="designation"
             errors={state.errors}
-          />
+          /> */}
         </div>
 
         {/* Submit button */}
