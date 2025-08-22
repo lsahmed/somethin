@@ -21,6 +21,10 @@ function Navbar() {
       href: "/",
     },
     {
+      name: "Become a Volunteer",
+      href: "/forms",
+    },
+    {
       name: "Roam Around",
       dropdown: [
         { name: "About Us", href: "/#About" },
@@ -31,10 +35,6 @@ function Navbar() {
         { name: "Workshops Etc.", href: "/#workshop" },
         { name: "Links.", href: "/#contact" },
       ],
-    },
-    {
-      name: "Become a Volunteer",
-      href: "/forms",
     },
     // The dropdown item (no href, triggers dropdown)
   ];
@@ -126,7 +126,7 @@ function Navbar() {
   }
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-[#f5f6fa] border-b border-gray-200 opacity-80 hover:opacity-100">
+    <nav className="sticky top-0 z-50 w-full bg-[#f5f6fa] border-b border-gray-200">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-4">
         {/* Brand on the left */}
         <Link href="/">
