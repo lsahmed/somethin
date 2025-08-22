@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react";
 import React from "react";
 import { useForm, ValidationError } from "@formspree/react"
 import { useRouter } from "next/navigation";
@@ -24,7 +25,18 @@ function ContactForm() {
   }
 
   const twoWayBinding = (e, n) => {
-
+    if(n == "name"){
+      setName(e);
+    }
+    else if(n == "email"){
+      setEmail(e);
+    }
+    else if(n == "phone"){
+      setPhone(e);
+    }
+    else if(n == "designation"){
+      setDesignation(e);
+    }
   }
 
   return (
@@ -43,7 +55,7 @@ function ContactForm() {
             id="name"
             name="name"
             value={name}
-            onChange={twoWayBinding(e.target.value, e.target.name)}
+            onChange={(e) => (twoWayBinding(e.target.value, e.target.name))}
             placeholder="Your Name"
             required
           />
@@ -65,7 +77,7 @@ function ContactForm() {
             id="email"
             name="email"
             value={email}
-            onChange={twoWayBinding(e.target.value, e.target.name)}
+            onChange={(e) => (twoWayBinding(e.target.value, e.target.name))}
             placeholder="you@email.com"
             required
           />
@@ -87,7 +99,7 @@ function ContactForm() {
             id="phone"
             name="phone"
             value={phone}
-            onChange={twoWayBinding(e.target.value, e.target.name)}
+            onChange={(e) => (twoWayBinding(e.target.value, e.target.name))}
             placeholder="Your Phone Number"
           />
           <ValidationError
@@ -108,7 +120,7 @@ function ContactForm() {
             id="designation"
             name="designation"
             value={designation}
-            onChange={twoWayBinding(e.target.value, e.target.name)}
+            onChange={(e) => (twoWayBinding(e.target.value, e.target.name))}
             placeholder="Your Designation"
           />
           <ValidationError
