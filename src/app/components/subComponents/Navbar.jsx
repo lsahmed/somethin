@@ -106,7 +106,9 @@ function Navbar() {
                 <div className="mt-1 flex flex-col pl-4">
                   {item.dropdown.map((d, didx) => (
                     <Link href={d.href} key={didx}
-                      className="py-2 px-2 text-gray-800 hover:bg-gray-100 rounded transition">
+                      className="py-2 px-2 text-gray-800 hover:bg-gray-100 rounded transition"
+                      onClick={() => setOpen(false)} // Close mobile navbar when clicking dropdown link
+                    >
                       {d.name}
                     </Link>
                   ))}
@@ -115,7 +117,10 @@ function Navbar() {
             </div>
           ) : (
             <Link href={item.href} key={idx}>
-              <button className="w-full px-6 py-0.5 rounded-lg border-2 border-gray-800 text-gray-800 font-semibold bg-transparent hover:bg-gray-800 hover:text-white transition text-left">
+              <button 
+                className="w-full px-6 py-0.5 rounded-lg border-2 border-gray-800 text-gray-800 font-semibold bg-transparent hover:bg-gray-800 hover:text-white transition text-left"
+                onClick={() => setOpen(false)} // Close mobile navbar when clicking regular link
+              >
                 {item.name}
               </button>
             </Link>

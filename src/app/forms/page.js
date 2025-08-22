@@ -9,12 +9,22 @@ import Link from "next/link";
 function ContactForm() {
   const router = useRouter()
   const [state, handleSubmit] = useForm("xzzvljqn");
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [designation, setDesignation] = useState("");
+
   const afterSubmit = () => {
     alert("Form Submitted!");
     router.push('/');
   }
   if (state.succeeded) {
     return afterSubmit()
+  }
+
+  const twoWayBinding = (e, n) => {
+
   }
 
   return (
@@ -32,6 +42,8 @@ function ContactForm() {
             type="text"
             id="name"
             name="name"
+            value={name}
+            onChange={twoWayBinding(e.target.value, e.target.name)}
             placeholder="Your Name"
             required
           />
@@ -52,6 +64,8 @@ function ContactForm() {
             type="email"
             id="email"
             name="email"
+            value={email}
+            onChange={twoWayBinding(e.target.value, e.target.name)}
             placeholder="you@email.com"
             required
           />
@@ -72,6 +86,8 @@ function ContactForm() {
             type="tel"
             id="phone"
             name="phone"
+            value={phone}
+            onChange={twoWayBinding(e.target.value, e.target.name)}
             placeholder="Your Phone Number"
           />
           <ValidationError
@@ -91,6 +107,8 @@ function ContactForm() {
             type="text"
             id="designation"
             name="designation"
+            value={designation}
+            onChange={twoWayBinding(e.target.value, e.target.name)}
             placeholder="Your Designation"
           />
           <ValidationError
