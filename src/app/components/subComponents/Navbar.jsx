@@ -33,7 +33,8 @@ function Navbar() {
         { name: "Our Mission", href: "/#ourmission  " },
         { name: "RealWorld Impact", href: "/#realworldimpact" },
         { name: "Workshops Etc.", href: "/#workshop" },
-        { name: "Links.", href: "/#contact" },
+        { name: "Contact Us", href: "/#contact" },
+        { name: "Learn More", href: "/#collaborate" },
       ],
     },
     // The dropdown item (no href, triggers dropdown)

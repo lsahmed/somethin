@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function CollaborateWithUs() {
   return (
-    <div className="bg-[#6C6E7B] min-h-screen py-16">
+    <section id="collaborate" className="bg-[#6C6E7B] min-h-screen py-16">
       <div className="max-w-6xl mx-auto px-6">
         {/* Heading */}
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -65,7 +65,7 @@ function CollaborateWithUs() {
           Together, we can accelerate India's journey towards a technologically advanced future.
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
