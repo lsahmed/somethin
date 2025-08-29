@@ -5,37 +5,52 @@ import Link from "next/link";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false); // For dropdown
+  const [dropdownOpen, setDropdownOpen] = useState(null); // Track which specific dropdown is open
+
+  // Helper function to handle navigation clicks
+  const handleNavClick = (href, name, e) => {
+    if (href === "/" && name !== "Home") {
+      e.preventDefault();
+      alert(`"${name}" page is under development. Please check back later!`);
+      return;
+    }
+  };
 
   const navItems = [
     {
-      name: "Collab With Us",
-      href: "/forms",
-    },
-    {
-      name: "Our Team",
-      href: "/team",
-    },
-    {
-      name: "Our Work",
+      name: "Home",
       href: "/",
     },
     {
-      name: "Become a Volunteer",
-      href: "/forms",
-    },
-    {
-      name: "Roam Around",
+      name: "About Us",
       dropdown: [
-        { name: "About Us", href: "/#About" },
+        { name: "Who we are?", href: "/#About" },
+        { name: "Mission & Vision", href: "/#ourmission  " },
         { name: "What We DO", href: "/#whatwedo" },
         { name: "Why Choose us?", href: "/#whywe" },
-        { name: "Our Mission", href: "/#ourmission  " },
-        { name: "RealWorld Impact", href: "/#realworldimpact" },
-        { name: "Workshops Etc.", href: "/#workshop" },
-        { name: "Contact Us", href: "/#contact" },
-        { name: "Learn More", href: "/#collaborate" },
       ],
+    },
+    {
+      name: "Our Work",
+      dropdown: [
+        { name: "Projects", href: "/" },
+        { name: "Workshops Etc", href: "/#workshop" },
+        { name: "Impact on World", href: "/#realworldimpact" },
+      ]
+    },
+    {
+      name: "Our Team",
+      href: "/team"
+    },
+    {
+      name: "Join Us",
+      dropdown: [
+        { name: "Volunteer", href: "/"},
+        { name: "Collaborate", href: "/#collaborate" },
+      ],
+    },
+    { name: "Contact Us", 
+      href: "/#contact" 
     },
     // The dropdown item (no href, triggers dropdown)
   ];
@@ -50,25 +65,29 @@ function Navbar() {
             <div
               key={idx}
               className="relative group"
-              onMouseEnter={() => setDropdownOpen(true)}
-              onMouseLeave={() => setDropdownOpen(false)}
+              onMouseEnter={() => setDropdownOpen(idx)}
+              onMouseLeave={() => setDropdownOpen(null)}
             >
               <button className="w-full px-6 py-0.5 rounded-lg border-2 border-gray-800 text-gray-800 font-semibold bg-transparent hover:bg-gray-800 hover:text-white transition">
                 {item.name}
               </button>
-              {/* Dropdown menu */}
-              {dropdownOpen && (
-                <div className="absolute left-0 z-10 mt-1 w-44 rounded-lg bg-white border border-gray-200 shadow-lg flex flex-col">
-                  {item.dropdown.map((d, didx) => (
-                    <Link href={d.href} key={didx} className="px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-gray-800 rounded transition">
-                      {d.name}
-                    </Link>
-                  ))}
-                </div>
+              {/* Dropdown menu with invisible bridge */}
+              {dropdownOpen === idx && (
+                <>
+                  {/* Invisible bridge to prevent hover break */}
+                  <div className="absolute left-0 top-full w-44 h-1 bg-transparent"></div>
+                  <div className="absolute left-0 z-10 top-full mt-1 w-44 rounded-lg bg-white border border-gray-200 shadow-lg flex flex-col">
+                    {item.dropdown.map((d, didx) => (
+                      <Link href={d.href} key={didx} className="px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-gray-800 rounded transition" onClick={(e) => handleNavClick(d.href, d.name, e)}>
+                        {d.name}
+                      </Link>
+                    ))}
+                  </div>
+                </>
               )}
             </div>
           ) : (
-            <Link href={item.href} key={idx}>
+            <Link href={item.href} key={idx} onClick={(e) => handleNavClick(item.href, item.name, e)}>
               <button className="w-full px-6 py-0.5 rounded-lg border-2 border-gray-800 text-gray-800 font-semibold bg-transparent hover:bg-gray-800 hover:text-white transition text-left">
                 {item.name}
               </button>
@@ -89,7 +108,7 @@ function Navbar() {
               {/* Toggle for dropdown */}
               <button
                 className="w-full px-6 py-0.5 rounded-lg border-2 border-gray-800 text-gray-800 font-semibold bg-transparent hover:bg-gray-800 hover:text-white transition flex justify-between items-center"
-                onClick={() => setDropdownOpen(dropdownOpen ? false : idx)} // Only open this dropdown
+                onClick={() => setDropdownOpen(dropdownOpen === idx ? null : idx)} // Toggle specific dropdown
               >
                 <span>{item.name}</span>
                 <svg
@@ -108,7 +127,10 @@ function Navbar() {
                   {item.dropdown.map((d, didx) => (
                     <Link href={d.href} key={didx}
                       className="py-2 px-2 text-gray-800 hover:bg-gray-100 rounded transition"
-                      onClick={() => setOpen(false)} // Close mobile navbar when clicking dropdown link
+                      onClick={(e) => {
+                        handleNavClick(d.href, d.name, e);
+                        setOpen(false); // Close mobile navbar when clicking dropdown link
+                      }}
                     >
                       {d.name}
                     </Link>
@@ -117,10 +139,12 @@ function Navbar() {
               )}
             </div>
           ) : (
-            <Link href={item.href} key={idx}>
+            <Link href={item.href} key={idx} onClick={(e) => {
+              handleNavClick(item.href, item.name, e);
+              setOpen(false); // Close mobile navbar when clicking regular link
+            }}>
               <button 
                 className="w-full px-6 py-0.5 rounded-lg border-2 border-gray-800 text-gray-800 font-semibold bg-transparent hover:bg-gray-800 hover:text-white transition text-left"
-                onClick={() => setOpen(false)} // Close mobile navbar when clicking regular link
               >
                 {item.name}
               </button>
